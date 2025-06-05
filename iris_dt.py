@@ -8,8 +8,11 @@ from sklearn.tree import DecisionTreeClassifier
 import seaborn as sns
 from sklearn.metrics import accuracy_score,confusion_matrix
 import matplotlib.pyplot as plt
+import dagshub
 
-mlflow.set_tracking_uri('http://127.0.0.1:5000')
+dagshub.init(repo_owner='vinayak910', repo_name='mlflow-dagshub-demo', mlflow=True)
+
+mlflow.set_tracking_url("https://dagshub.com/vinayak910/mlflow-dagshub-demo.mlflow")
 
 iris = load_iris()
 
